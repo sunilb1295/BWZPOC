@@ -1,0 +1,25 @@
+<mvc:View controllerName="com.demo.mydemoappbwz.demoappbwz.controller.demoview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="{i18n>header}" level="H1" />
+                <Text text="{i18n>hostedMessage}" class="sapUiSmallMarginTop" />
+                
+                <HBox class="sapUiMediumMarginTop">
+                    <Button text="{i18n>sayHello}" press="onHelloPress" type="Emphasized" class="sapUiSmallMarginEnd" />
+                    <Button text="{i18n>showInfo}" press="onInfoPress" />
+                </HBox>
+                
+                <MessageStrip 
+                    id="messageStrip"
+                    text="{i18n>clickMessage}"
+                    type="Information"
+                    showIcon="true"
+                    class="sapUiMediumMarginTop"
+                    visible="true" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

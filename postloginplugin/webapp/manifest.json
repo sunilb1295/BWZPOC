@@ -1,0 +1,118 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.postlogin.postloginplugin",
+    "type": "component",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.6",
+      "toolsId": "7b4c8684-bbeb-4908-aaf7-341ec2030835"
+    },
+    "crossNavigation": {
+   		"inbounds": {
+			"Shell-plugin": {
+				"signature": {
+					"parameters": {},
+					"additionalParameters": "allowed"
+				},
+				"hideLauncher": true,
+				"semanticObject": "Shell",
+				"action": "plugin"
+			}
+	  }
+	}
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.144.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.postlogin.postloginplugin.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.postlogin.postloginplugin.view",
+        "async": true,
+        "viewPath": "com.postlogin.postloginplugin.view"
+      },
+      "routes": [
+        {
+          "name": "RoutePostLoginPlugin",
+          "pattern": ":?query:",
+          "target": [
+            "TargetPostLoginPlugin"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetPostLoginPlugin": {
+          "id": "PostLoginPlugin",
+          "name": "PostLoginPlugin"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.postlogin.postloginplugin.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "compostloginpostloginplugin"
+  },
+  "sap.flp": {
+    "type": "plugin"
+  }
+}
